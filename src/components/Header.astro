@@ -1,0 +1,105 @@
+<!-- Start Header -->
+<header>
+	<div class="container">
+		<a href="#" class="logo">
+			<img src="images/logo.png" alt="Logo" />
+		</a>
+		<nav>
+			<i class="fas fa-bars toggle-menu"></i>
+			<ul>
+				<li><a class="active" href="#">Home</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+			<div class="form">
+				<i class="fas fa-search"></i>
+			</div>
+		</nav>
+	</div>
+</header>
+<!-- End Header -->
+<style>
+	/* Start Header */
+	header {
+		width: 100%;
+		z-index: 2;
+		background-color: rgb(0 0 0 / 70%);
+		position: fixed;
+	}
+	header .container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		min-height: 97px;
+	}
+	header .logo img {
+		height: 40px;
+	}
+	header nav {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	header nav .toggle-menu {
+		color: white;
+		font-size: 22px;
+	}
+	@media (min-width: 768px) {
+		header nav .toggle-menu {
+			display: none;
+		}
+	}
+	header nav ul {
+		display: flex;
+	}
+	@media (max-width: 767px) {
+		header nav ul {
+			display: none;
+		}
+		header nav .toggle-menu:hover + ul {
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			background-color: rgb(0 0 0 / 50%);
+		}
+		header nav ul li a {
+			padding: 15px !important;
+		}
+	}
+	header nav ul li a {
+		padding: 40px 10px;
+		display: block;
+		color: white;
+		text-decoration: none;
+		font-size: 14px;
+		transition: 0.3s;
+		position: relative;
+		z-index: 2;
+	}
+	header nav ul li a.active,
+	header nav ul li a:hover {
+		color: var(--main-color);
+		border-bottom: 1px solid var(--main-color);
+	}
+	header nav .form {
+		width: 40px;
+		height: 30px;
+		position: relative;
+		margin-left: 30px;
+		border-left: 1px solid white;
+	}
+	header nav .form i {
+		color: white;
+		position: absolute;
+		font-size: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+	}
+	/* End Header */
+</style>
