@@ -1,0 +1,38 @@
+---
+const { customer } = Astro.props;
+const fullname = `${customer.name.first} ${customer.name.last}`;
+const companyUrl = `https://www.${customer.company}.com`;
+---
+
+<div class="testimonial">
+  <figure>
+    <img src={ customer.picture.medium } alt={ fullname }>
+    <blockquote cite={ companyUrl }>
+      <p>{ customer.quote }</p>
+    </blockquote>
+    <figcaption>{ fullname }, <cite>{ customer.company }</cite></figcaption>
+  </figure>
+</div>
+<style>
+  .testimonial {
+		flex: 0 1 auto;
+		height: fit-content;
+		width: 32%;
+		text-align: center;
+		line-height: 2;
+		color: #777;
+	}
+	.testimonial figure > * {
+		margin-bottom: 16px;
+	}
+	.testimonial figure img {
+		border-radius: 50%;
+	}
+
+  @media (max-width: 961px) {
+		.testimonial {
+			width: 100%;
+			margin-bottom: 16px;
+		}
+	}
+</style>
