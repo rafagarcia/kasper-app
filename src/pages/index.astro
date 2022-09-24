@@ -5,10 +5,9 @@ import Landing from '../components/Landing.astro';
 import Services from '../components/Services.astro';
 import Video from '../components/Video.astro';
 import Contact from '../components/Contact.astro';
-import Testimonials from '../components/Testimonials.astro';
 import Footer from '../components/Footer.astro';
 
-import { SimpleGreeting } from '../components/simple-greeting.js';
+import { KasperTestimonials } from '../components/kasper-testimonials.js';
 ---
 
 <Layout title="Kasper app">
@@ -17,7 +16,6 @@ import { SimpleGreeting } from '../components/simple-greeting.js';
 	<Services></Services>
 	<Video></Video>
 	<Contact></Contact>
-	<Testimonials></Testimonials>
-	<simple-greeting></simple-greeting>
+	<KasperTestimonials client:visible></KasperTestimonials>
 	<Footer></Footer>
 </Layout>
